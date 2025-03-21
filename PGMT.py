@@ -84,7 +84,7 @@ def main():
     ### How to Use:
     - **Upload an Excel file** containing a column labeled "GrantID" to process multiple grant IDs at once, **OR**
     - **Manually enter a Grant ID** to search for related publications to a single grant ID.
-    - You can use this tool to find all grant ID's from funders: 🔗 **[Find Grant IDs by Funder](https://fgif-tool.streamlit.app/)**
+    - Need to find grant ID's from funders? 🔗 **[Find Grant IDs by Funder](https://fgif-tool.streamlit.app/)**
     - Select the appropriate funder if multiple funders use the same grant ID.  
     - Export matched results as a CSV file for further analysis.  
     
