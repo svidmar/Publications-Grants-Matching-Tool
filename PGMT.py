@@ -95,7 +95,11 @@ def main():
     - Grant IDs **are not unique**—multiple funders may use the same ID. The tool provides a list of funders associated with the entered grant ID to ensure correct selection.  
     - Data on grants and publications is still an evolving area in schloarly publishing, so mismatches or missing records may occur.  
     - Automating the process of linking publications to grants in local systems would obviously be useful, but approach this with caution—funding information data quality can still be inconsistent. It’s advisable to have a quality check in place.
-    - Excel uploads are limited to 100 Grant IDs to prevent timeouts and excessive load on the OpenAlex API. For larger datasets, fetch the data directly from OpenAlex 🙂 
+    - Excel uploads are limited to 100 Grant IDs to prevent timeouts and excessive load on the OpenAlex API. For larger datasets, fetch the data directly from OpenAlex 🙂
+
+    ### **Known Issues:** 
+    - Grant IDs containing whitespace do not yield any results
+ 
 
     ### **License:** MIT License
 
