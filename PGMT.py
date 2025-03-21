@@ -6,12 +6,11 @@ import urllib.parse
 
 def fetch_funders_for_grant(grant_id):
     """Fetch list of funders for a specific Grant ID from OpenAlex."""
-    encoded_grant_id = urllib.parse.quote(grant_id.strip())
-    url = f"https://api.openalex.org/works?filter=grants.award_id:{encoded_grant_id}"
+    url = f"https://api.openalex.org/works?filter=grants.award_id:{grant_id}"
     response = requests.get(url)
     
     if response.status_code != 200:
-        st.error(f"Failed to fetch funders for Grant ID '{grant_id}' from OpenAlex.")
+        st.error(f"Failed to fetch funders for Grant ID {grant_id} from OpenAlex.")
         return []
     
     try:
@@ -21,8 +20,7 @@ def fetch_funders_for_grant(grant_id):
         
         for work in works:
             for grant in work.get("grants", []):
-                award_id = grant.get("award_id", "").strip().lower()
-                if award_id == grant_id.strip().lower() and grant.get("funder_display_name"):
+                if grant.get("award_id") == grant_id and grant.get("funder_display_name"):
                     funders.add((grant["funder_display_name"], grant["funder"]))
         
         return list(funders)
