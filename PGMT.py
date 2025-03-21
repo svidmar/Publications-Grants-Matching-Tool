@@ -2,10 +2,12 @@ import streamlit as st
 import pandas as pd
 import requests
 import time
+import urllib.parse
 
 def fetch_funders_for_grant(grant_id):
     """Fetch list of funders for a specific Grant ID from OpenAlex."""
-    url = f"https://api.openalex.org/works?filter=grants.award_id:{grant_id}"
+    encoded_grant_id = urllib.parse.quote(grant_id)
+    url = f"https://api.openalex.org/works?filter=grants.award_id:{encoded_grant_id}"
     response = requests.get(url)
     
     if response.status_code != 200:
