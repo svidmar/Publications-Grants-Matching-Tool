@@ -98,7 +98,7 @@ def main():
     - Excel uploads are limited to 100 Grant IDs to prevent timeouts and excessive load on the OpenAlex API. For larger datasets, fetch the data directly from OpenAlex 🙂
 
     ### **Known Issues:** 
-    - Grant IDs containing whitespace do not yield any results
+    - The OpenAlex API does not (yet) support filtering on GrantID when the value is a text string and not an ID. Only ID matches are currently supported
  
 
     ### **License:** MIT License
